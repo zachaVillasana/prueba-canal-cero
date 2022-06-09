@@ -1,0 +1,562 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    color: #4C4C4C;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+}
+
+
+/* Ocultar el checkbox y el icono del navbar */
+
+.navbar-zv input[type="checkbox"],
+.navbar-icon {
+    display: none;
+}
+
+
+/* navbar estilos */
+
+.navbar-mobile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.8rem 0.6rem;
+    background: #fff;
+}
+
+.navbar-items {
+    order: 2;
+    display: flex;
+}
+
+.navbar-items li {
+    list-style: none;
+    margin-left: 1.5rem;
+    font-size: 1rem;
+}
+
+.navbar-items li a {
+    color: #4C4C4C;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar-items li a:hover {
+    color: rgb(255, 69, 0);
+}
+
+.navbar-rrss {
+    order: 1;
+    list-style: none;
+    display: flex;
+}
+
+.navbar-rrss li {
+    margin: 0.6rem;
+}
+
+
+/* Cambio menú mobile */
+
+@media (max-width: 768px) {
+    .navbar-zv input[type="checkbox"],
+    .navbar-zv .navbar-icon {
+        display: block;
+    }
+    .navbar-zv {
+        display: block;
+        position: relative;
+    }
+    .navbar-zv input[type="checkbox"] {
+        position: absolute;
+        display: block;
+        height: 32px;
+        width: 30px;
+        top: 20px;
+        left: 20px;
+        z-index: 5;
+        opacity: 0;
+        cursor: pointer;
+    }
+    .navbar-mobile input[type="checkbox"] {
+        position: absolute;
+        display: block;
+        height: 32px;
+        width: 30px;
+        top: 20px;
+        left: 20px;
+        z-index: 5;
+        opacity: 0;
+        cursor: pointer;
+    }
+    .navbar-zv .navbar-icon {
+        display: block;
+        height: 28px;
+        width: 35px;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        z-index: 3;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .navbar-zv .navbar-icon .linea-icono {
+        display: block;
+        height: 4px;
+        border-radius: 10px;
+        background: rgb(255, 69, 0);
+    }
+    .navbar-zv .navbar-icon .linea-1 {
+        transform-origin: 0% 0%;
+        transition: transform 0.3s ease-in-out;
+    }
+    .navbar-zv .navbar-icon .linea-2 {
+        transition: transform 0.2s ease-in-out;
+    }
+    .navbar-zv .navbar-icon .linea-3 {
+        transform-origin: 0% 100%;
+        transition: transform 0.3s ease-in-out;
+    }
+    .navbar-mobile {
+        width: 100%;
+        transform: translate(-504%);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        transition: transform 0.5s ease-in-out;
+        box-shadow: 5px 0px 10px 0px #aaa;
+        position: absolute;
+        left: 0;
+        top: 0;
+        padding: 5.5rem 2.5rem 3rem 2.5rem;
+        z-index: 2;
+    }
+    .navbar-items {
+        flex-direction: column;
+    }
+    .navbar-zv .navbar-items li {
+        margin-bottom: 1.8rem;
+        font-size: 1.1rem;
+        font-weight: 500;
+        margin-left: 0;
+    }
+    .navbar-zv input[type="checkbox"]:checked~.navbar-mobile {
+        transform: translateX(0);
+    }
+    .navbar-zv input[type="checkbox"]:checked~.navbar-icon .linea-1 {
+        transform: rotate(45deg);
+    }
+    .linea-2 {
+        width: 60%;
+    }
+    .navbar-zv input[type="checkbox"]:checked~.navbar-icon .linea-2 {
+        transform: scaleY(0);
+    }
+    .navbar-zv input[type="checkbox"]:checked~.navbar-icon .linea-3 {
+        transform: rotate(-45deg);
+    }
+    .navbar-rrss {
+        order: 2;
+    }
+    .navbar-rrss li {
+        margin-right: 2.6rem;
+        margin-left: 0;
+    }
+    .navbar-items {
+        order: 1;
+    }
+}
+
+
+/* Carusel */
+
+.item-banner {
+    position: relative;
+}
+
+.contenido-caja-slider {
+    width: 60%;
+    left: 24%;
+    position: absolute;
+    top: 20%;
+    padding: 30px;
+}
+
+.contenido-caja-slider a {
+    color: #fff;
+    background: #504f4f;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.item-banner h2 {
+    color: rgb(255, 69, 0);
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    font-weight: 399;
+    margin-bottom: 2rem;
+}
+
+.item-banner img {
+    height: 26rem;
+    object-fit: cover;
+}
+
+
+/* wraps */
+
+.f-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 2rem 0rem;
+}
+
+.contendor-wrap {
+    width: 40%;
+}
+
+.f-wrap img {
+    width: 100%;
+}
+
+.subtitle {
+    font-weight: 300;
+    margin: 20px auto;
+}
+
+
+/* Fondo sección dropdowns */
+
+.fondo-textura {
+    background-image: url('/imgs/fondo-dd.png');
+}
+
+
+/* Dropdowns */
+
+.dropdown {
+    width: 100%;
+    height: auto;
+    margin: 5px 0;
+}
+
+.dropdown:first-child {
+    margin-top: 50px;
+}
+
+.dropdown .dd-title {
+    width: 100%;
+    padding: 1.5rem 0rem;
+    cursor: pointer;
+}
+
+.dropdown .dd-title .title {
+    font-size: 16px;
+    letter-spacing: 1px;
+    position: relative;
+    margin: 0;
+}
+
+.bordes {
+    border-top: 1px solid rgb(255, 69, 0);
+    border-bottom: 1px solid rgb(255, 69, 0);
+}
+
+
+/* DD flecha */
+
+.dropdown .dd-title .title .icon {
+    position: absolute;
+    right: 1%;
+    top: calc(50% - 8px);
+    width: 16px;
+    height: 16px;
+    background-color: transparent;
+    transform: rotate(-90deg);
+    transition: transform 0.3s ease-in;
+}
+
+.dropdown .dd-title .title .icon:before,
+.dropdown .dd-title .title .icon:after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 2px;
+    background-color: rgb(255, 69, 0);
+}
+
+.dropdown .dd-title .title .icon:before {
+    top: 0;
+    left: 2px;
+    transform: rotate(-45deg);
+}
+
+.dropdown .dd-title .title .icon:after {
+    top: 0;
+    right: 2px;
+    transform: rotate(45deg);
+}
+
+
+/* DD contenido */
+
+.dd-contenido {
+    width: 100%;
+    height: auto;
+    display: none;
+    overflow: hidden;
+}
+
+.dd-contenido p {
+    width: 100%;
+    margin: 10px auto;
+    font-size: 16px;
+    line-height: 28px;
+    letter-spacing: 1px;
+    opacity: 0;
+    transform: translate3d(0px, 60px, 0px);
+    transition: transform 0.6s cubic-bezier(0, 0.99, 0.44, 1.01), opacity 0.8s 0.1s cubic-bezier(0, 0.99, 0.44, 1.01);
+}
+
+
+/* DD activo */
+
+.dropdown .dd-title.active .title .icon {
+    transform: rotate(0deg);
+    transition: transform 0.3s ease-in;
+}
+
+.dropdown .dd-contenido p.show {
+    opacity: 1;
+    transform: translate3d(0px, 0px, 0px);
+    transition: opacity 0.8s cubic-bezier(0, 0.99, 0.44, 1.01), transform 0.6s 0.1s cubic-bezier(0, 0.99, 0.44, 1.01);
+}
+
+
+/* Fondo naranja */
+
+.fondo-naranja {
+    background: rgb(255, 69, 0);
+    color: #fff;
+    padding: 3rem 0rem;
+}
+
+.suscribete {
+    display: flex;
+    justify-content: center;
+    align-items: self-end;
+    flex-wrap: wrap;
+}
+
+.suscribete h3 {
+    font-size: 1rem;
+    margin: 0;
+}
+
+.suscribete h3 span {
+    font-size: 2rem;
+}
+
+.input-correo {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+    margin: 0rem 1rem;
+    outline: none;
+}
+
+.btn-enviar {
+    border: none;
+    background: #fff;
+    font-size: 15px;
+    padding: 0.5rem 2rem;
+    height: 44px;
+    color: rgb(255, 69, 0);
+}
+
+
+/* FORM CONTACTO */
+
+.contacto {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: end;
+    margin: 2rem auto;
+    width: 35%;
+}
+
+.contacto h2 {
+    width: 100%;
+    text-align: left;
+    font-size: 1.5rem;
+}
+
+.item-form {
+    margin: 0.5rem auto;
+    padding: 0.5rem;
+    width: 100%;
+}
+
+.btn-form {
+    color: #fff;
+    background: #504f4f;
+    padding: 1rem 2rem;
+    font-size: 15px;
+    border: none;
+}
+
+
+/* FOOTER */
+
+footer {
+    background: #4C4C4C;
+    padding: 2rem 0rem;
+    position: relative;
+}
+
+.contenedor-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.contenedor-footer img {
+    width: 30%;
+}
+
+.contenedor-footer ul li {
+    list-style: none;
+}
+
+.contenedor-footer ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.rrss-footer {
+    list-style: none;
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    align-items: center;
+    position: absolute;
+    bottom: 1rem;
+    right: 22%;
+}
+
+.rrss-footer li {
+    margin: 1rem;
+    width: 2rem;
+}
+
+
+/* Media queries */
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+    .contenido-caja-slider {
+        width: 79%;
+        left: 5%;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+    .contenido-caja-slider {
+        left: 6%;
+    }
+    .contendor-wrap {
+        width: 49%;
+    }
+    .contacto {
+        width: 65%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .contendor-wrap {
+        width: 100%;
+    }
+    .contenido-caja-slider {
+        width: 90%;
+        left: 1%;
+        top: 29%;
+    }
+    .f-wrap {
+        padding-top: 0;
+    }
+    .contacto {
+        width: 95%;
+    }
+    .suscribete h3 {
+        margin-bottom: 0.5rem;
+    }
+    .contenedor-footer {
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        padding-bottom: 4rem;
+    }
+    .contenedor-footer ul {
+        margin-bottom: 0;
+        padding: 0;
+    }
+    .contenedor-footer img {
+        width: 60%;
+        margin-bottom: 2rem;
+    }
+    .rrss-footer {
+        right: 26%;
+    }
+    .btn-enviar {
+        padding: 13px;
+    }
+}
+
+
+/* Extra small devices (phones, 600px and down) */
+
+@media only screen and (max-width: 600px) {
+    ...
+}
+
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+
+@media only screen and (min-width: 600px) {
+    ...
+}
+
+
+/* Medium devices (landscape tablets, 768px and up) */
+
+@media only screen and (min-width: 768px) {
+    ...
+}
+
+
+/* Large devices (laptops/desktops, 992px and up) */
+
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+
+@media only screen and (min-width: 1200px) {
+    ...
+}
